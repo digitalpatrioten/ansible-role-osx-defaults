@@ -1,6 +1,6 @@
-# superlumic-mysql
+# superlumic-osx-defaults
 
-Ansible role to install NodeJS on OSX. This role is part of the Superlumic project that aims to simplify repeat computer setups on OSX, 10.10 and up.
+Ansible role to set "defaults" on OSX. This role is part of the Superlumic project that aims to simplify repeat computer setups on OSX, 10.10 and up.
 
 ## Requirements
 
