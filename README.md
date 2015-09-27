@@ -1,46 +1,106 @@
-osx-defaults
-============
+# superlumic-mysql
 
-An Ansible role to set the OS X user defaults
+Ansible role to install NodeJS on OSX. This role is part of the Superlumic project that aims to simplify repeat computer setups on OSX, 10.10 and up.
 
-Requirements
-------------
+## Requirements
 
-None.
+* OSX 10.10 or 10.11
 
-Role Variables
---------------
+## Role Variables
 
-## values to set for Finder
+```yaml
+    - osx_defaults:
+      - domain: 'com.apple.dock'
+        key: 'autohide'
+        type: boolean
+        value: true
+      - domain: 'com.apple.dock'
+        key: 'minimize-to-application'
+        type: integer
+        value: 1
+      - domain: 'com.apple.dock'
+        key: 'show-process-indicators'
+        type: boolean
+        value: true
+      - domain: 'com.apple.dock'
+        key: 'orientation'
+        type: string
+        value: left
+      - domain: 'NSGlobalDomain'
+        key: 'NSTableViewDefaultSizeMode'
+        type: integer
+        value: 1
+      - domain: 'com.apple.screencapture'
+        key: 'type'
+        type: string
+        value: png
+      - domain: 'NSGlobalDomain'
+        key: 'KeyRepeat'
+        type: integer
+        value: 2
+      - domain: 'NSGlobalDomain'
+        key: 'InitialKeyRepeat'
+        type: integer
+        value: 15
+      - domain: 'com.apple.menuextra.clock'
+        key: 'DateFormat'
+        type: string
+        value: EEE MMM d  HH:mm
+      - domain: 'com.apple.menuextra.battery'
+        key: 'ShowPercent'
+        type: string
+        value: 'YES'
+      - domain: 'com.apple.finder'
+        key: 'FXPreferredViewStyle'
+        type: string
+        value: "clmv"
+      - domain: 'NSGlobalDomain'
+        key: 'NSNavPanelExpandedStateForSaveMode'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'PMPrintingExpandedStateForPrint'
+        type: boolean
+        value: true
+      - domain: 'com.apple.dock'
+        key: 'tilesize'
+        type: float
+        value: 32
+      - domain: 'com.apple.dock'
+        key: 'autohide-time-modifier'
+        type: int
+        value: 0
+      - domain: 'com.apple.dock'
+        key: 'autohide-delay'
+        type: int
+        value: 0
+      - domain: 'NSGlobalDomain'
+        key: 'NSQuitAlwaysKeepsWindows'
+        type: boolean
+        value: false
+      - domain: 'NSGlobalDomain'
+        key: 'ApplePressAndHoldEnabled'
+        type: boolean
+        value: false
+      - domain: 'com.apple.desktopservices'
+        key: 'DSDontWriteNetworkStores'
+        type: boolean
+        value: true
+      - domain: 'com.apple.print.PrintingPrefs'
+        key: 'Quit When Finished'
+        type: boolean
+        value: true
+```
 
-osx_defaults_finder_values:
-  - { domain: com.apple.finder, key: AppleShowAllFiles, type: boolean, value: true, state: present }
-  - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: string, value: true, state: present }
+# Usage
 
-## values to set for SystemUIServer
+See above and check [Superlumic](https://github.com/superlumic/superlumic) for documentation
 
-osx_defaults_system_ui_server_values:
-  - { domain: com.apple.screencapture, key: disable-shadow, type: boolean, value: true, state: present }
-
-Dependencies
-------------
-
-None.
-
-
-Example Playbook
-----------------
-
-    - hosts: servers
-      roles:
-         - { role: hnakamur.osx-defaults }
-
-License
--------
+# License
 
 MIT
 
-Author Information
-------------------
+# Author
 
 [Hiroaki Nakamura]( http://hnakamur.github.io/ )
+Modified by [Roderik van der Veer](mailto:roderik@superlumic.com) - [@r0derik](https://twitter.com/r0derik)

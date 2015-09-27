@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: Hiroaki Nakamura
+  author: Roderik van der Veer
   description: An Ansible role to set the OS X user defaults
   license: MIT
   min_ansible_version: 1.2
